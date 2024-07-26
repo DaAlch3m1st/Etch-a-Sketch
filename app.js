@@ -52,13 +52,12 @@ function rainbowMode(Lenght = 6) {
 }
 
 function sizeChange() {    
-    size = parseInt(prompt('Set the size that you wish', 16));
+    size = parseInt(prompt('Please enter the grid size (between 1 and 100):', 16));
     
-    if (Number.isNaN(size) == true) { // check if the value of the prompt 'size' isn't a number and print an error
-        alert(`The input isn't a number`);
+    if (Number.isNaN(size) == true || size < 1 || size > 64) { // check if the value of the prompt 'size' isn't a number and print an error
+        alert(`Invalid input. Please enter a number between 1 and 64.`);
         console.error(`${size} isn't a int number`);
-    }
-    else {
+    }else {
         createGrids(); // else the value is a number run the rest of the code
     }
 }
