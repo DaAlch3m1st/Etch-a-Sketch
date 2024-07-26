@@ -12,7 +12,6 @@ function createGrids() {
         while (gridContainer.firstChild) {
             gridContainer.removeChild(gridContainer.firstChild); // remove existing grid to run another one
         }
-    
         // Create new grid items
         for (let i = 0; i < size; i++) { // create the rows 
             const rows = document.createElement('div');
@@ -41,10 +40,10 @@ function createGrids() {
 
 }
 
-function rainbowMode(Lenght = 6) {
+function rainbowMode(Length = 6) {
     const hexLetters = 'abcdef0123456789'.toUpperCase();
     let result = '#';
-    for (let i = 0; i < Lenght; i++) {
+    for (let i = 0; i < Length; i++) {
         result += hexLetters.charAt(Math.floor(Math.random() * hexLetters.length));
       } 
       return result;
@@ -68,4 +67,3 @@ function resetx() {
 
 sizeBtn.addEventListener('click', sizeChange);
 resetBtn.addEventListener('click', resetx);
-rainbowModeBtn.addEventListener('click', createGrids, rainbowMode)
